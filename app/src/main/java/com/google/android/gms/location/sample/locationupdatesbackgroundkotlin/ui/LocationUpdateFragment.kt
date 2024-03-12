@@ -17,11 +17,13 @@ package com.google.android.gms.location.sample.locationupdatesbackgroundkotlin.u
 
 import android.Manifest
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.gms.location.sample.locationupdatesbackgroundkotlin.R
@@ -136,10 +138,12 @@ class LocationUpdateFragment : Fragment() {
         activityListener = null
     }
 
+    @RequiresApi(Build.VERSION_CODES.Q)
     private fun showBackgroundButton(): Boolean {
         return !requireContext().hasPermission(Manifest.permission.ACCESS_BACKGROUND_LOCATION)
     }
 
+    @RequiresApi(Build.VERSION_CODES.Q)
     private fun updateBackgroundButtonState() {
         if (showBackgroundButton()) {
             binding.enableBackgroundLocationButton.visibility = View.VISIBLE
