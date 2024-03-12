@@ -112,6 +112,7 @@ class LocationUpdateFragment : Fragment() {
         )
     }
 
+    @RequiresApi(Build.VERSION_CODES.Q)
     override fun onResume() {
         super.onResume()
         updateBackgroundButtonState()
