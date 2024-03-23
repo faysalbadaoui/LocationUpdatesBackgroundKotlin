@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity(), PermissionRequestFragment.Callbacks,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
